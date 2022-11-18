@@ -8,8 +8,15 @@ from .serializers import VillagerSerializer
 
 # Create your views here.
 class VillagersView(APIView):
-    """View class for books/ for viewinmg all and creating"""
+    """View class for villagers/ for viewinmg all and creating"""
     def get(self, request):
         villagers = Villager.objects.all()
         serializer =VillagerSerializer(villagers, many=True)
         return Response({'villagers': serializer.data})
+
+    def post(self, request):
+        serializer = VillagerSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
