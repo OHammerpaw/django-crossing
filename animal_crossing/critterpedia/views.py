@@ -20,3 +20,11 @@ class BugsView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# localhost:3000/bugs/:id get delete update
+class BugDetailView(APIView):
+    """View class for bugs/:pk for viewing a single bug, updating a single bug, or removing a single bug"""
+    def get(self, request, pk):
+        bug = get_object_or_404(Bug, pk=pk)
+        serializer = BugSerializer(bug)
+        return Response({'bug': serializer.data})
