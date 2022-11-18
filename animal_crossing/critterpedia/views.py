@@ -28,3 +28,16 @@ class BugDetailView(APIView):
         bug = get_object_or_404(Bug, pk=pk)
         serializer = BugSerializer(bug)
         return Response({'bug': serializer.data})
+
+    def patch(self, request, pk):
+        bug = get_object_or_404(Bug, pk=pk)
+        serializer = BugSerializer(bug, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk):
+        bug = get_object_or_404(Bug, pk=pk)
+        bug.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
