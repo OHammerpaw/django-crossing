@@ -20,3 +20,11 @@ class VillagersView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# localhost:3000/villagers/:id get delete update
+class VillagerDetailView(APIView):
+    """View class for villagers/:pk for viewing a single villager, updating a single villager, or removing a single villager"""
+    def get(self, request, pk):
+        villager = get_object_or_404(Villager, pk=pk)
+        serializer = VillagerSerializer(villager)
+        return Response({'villager': serializer.data})
