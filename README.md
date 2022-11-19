@@ -17,13 +17,13 @@ An app to catalog villagers, the diys you recieve from them, and critters from A
 | PATCH  | `characters/diys/:pk`     | `update`           |
 | DELETE | `characters/diys/:pk`     | `destroy`          |
 
-| Verb   | Path            | Action             |
-|--------|-----------------|--------------------|
-| GET    | `/bugs/`        | `index`            |
-| GET    | `/bugs/:pk`     | `show`             |
-| POST   | `/bugs/`        | `create`           |
-| PATCH  | `/bugs/`        | `update`           |
-| DELETE | `/bugs/:pk`     | `destroy`          |
+| Verb   | Path                        | Action             |
+|--------|-----------------------------|--------------------|
+| GET    | `critterpedia/bugs/`        | `index`            |
+| GET    | `critterpedia/bugs/:pk`     | `show`             |
+| POST   | `critterpedia/bugs/`        | `create`           |
+| PATCH  | `critterpedia/bugs/`        | `update`           |
+| DELETE | `critterpedia/bugs/:pk`     | `destroy`          |
 
 ## Starting Instructions
 
