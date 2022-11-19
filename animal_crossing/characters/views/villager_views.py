@@ -3,8 +3,8 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import Villager
-from .serializers import VillagerSerializer
+from ..models.villager import Villager
+from ..serializers import VillagerSerializer
 
 # Create your views here.
 class VillagersView(APIView):

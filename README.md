@@ -1,16 +1,21 @@
 # Django Crossing
 
-An app to catalog villagers and critters from Animal Crossing: New Horizons. Created using Python, Django, Postgres.
+An app to catalog villagers, the diys you recieve from them, and critters from Animal Crossing: New Horizons! Created using Python, Django, Postgres.
 
 ## Routes Table
 
-| Verb   | Path            | Action             |
-|--------|-----------------|--------------------|
-| GET    | `/villagers/`   | `index`            |
-| GET    | `/villagers/:pk`| `show`             |
-| POST   | `/villagers/`   | `create`           |
-| PATCH  | `/villagers/`   | `update`           |
-| DELETE | `/villagers/:pk`| `destroy`          |
+| Verb   | Path                      | Action             |
+|--------|---------------------------|--------------------|
+| GET    | `characters/villagers/`   | `index`            |
+| GET    | `characters/villagers/:pk`| `show`             |
+| POST   | `characters/villagers/`   | `create`           |
+| PATCH  | `characters/villagers/:pk`| `update`           |
+| DELETE | `characters/villagers/:pk`| `destroy`          |
+| GET    | `characters/diys/`        | `index`            |
+| GET    | `characters/diys/:pk`     | `show`             |
+| POST   | `characters/diys/`        | `create`           |
+| PATCH  | `characters/diys/:pk`     | `update`           |
+| DELETE | `characters/diys/:pk`     | `destroy`          |
 
 | Verb   | Path            | Action             |
 |--------|-----------------|--------------------|
@@ -22,11 +27,11 @@ An app to catalog villagers and critters from Animal Crossing: New Horizons. Cre
 
 ## Starting Instructions
 
+Install dependencies:
+
 `pip3 install --upgrade pip`
 
 `pip install pipenv`
-
-`pipenv shell`
 
 `pipenv install django==4.1 psycopg2-binary`
 
